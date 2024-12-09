@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Suggestion</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles CSS personnalisés */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .suggestion {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+        }
+        .suggestion p {
+            margin: 0;
+        }
+        .delete-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulaire de Suggestion</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="bot.html">Bot</a></li>
+                <li><a href="langue-patatienne.html">Langue Patatienne</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <form id="suggestion-form">
+            <div class="form-group">
+                <label for="pseudo">Pseudo :</label>
+                <input type="text" id="pseudo" name="pseudo" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+        
+        <div id="suggestions-container">
+            <!-- Ici seront affichées les suggestions -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 La Patated. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonction pour sauvegarder les suggestions dans le stockage local
+        function saveSuggestion(pseudo, message) {
+            var suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            suggestions.push({ pseudo: pseudo, message: message });
+            localStorage.setItem('suggestions', JSON.stringify(suggestions));
+        }
+
+        // Fonction pour charger les suggestions depuis le stockage local
+        function loadSuggestions() {
+            var suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            var suggestionsContainer = document.getElementById('suggestions-container');
+
+            suggestions.forEach(function(suggestion, index) {
+                var suggestionDiv = createSuggestionElement(suggestion, index);
+                suggestionsContainer.appendChild(suggestionDiv);
+            });
+        }
+
+        // Fonction pour créer un élément de suggestion
+        function createSuggestionElement(suggestion, index) {
+            var suggestionDiv = document.createElement('div');
+            suggestionDiv.classList.add('suggestion');
+            suggestionDiv.innerHTML = '<p><strong>' + suggestion.pseudo + ' :</strong> ' + suggestion.message + '</p>';
+
+            // Ajoute un bouton de suppression à la suggestion
+            var deleteButton = document.createElement('span');
+            deleteButton.classList.add('delete-button');
+            deleteButton.innerHTML = '&times;';
+            deleteButton.setAttribute('data-index', index);
+            deleteButton.addEventListener('click', function() {
+                deleteSuggestion(index);
+            });
+            suggestionDiv.appendChild(deleteButton);
+
+            return suggestionDiv;
+        }
+
+        // Fonction pour supprimer une suggestion
+        function deleteSuggestion(index) {
+            var suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            suggestions.splice(index, 1); // Supprime l'élément du tableau
+            localStorage.setItem('suggestions', JSON.stringify(suggestions));
+
+            // Rafraîchit l'affichage des suggestions
+            refreshSuggestions();
+        }
+
+        // Fonction pour rafraîchir l'affichage des suggestions
+        function refreshSuggestions() {
+            var suggestionsContainer = document.getElementById('suggestions-container');
+            suggestionsContainer.innerHTML = ''; // Efface le contenu actuel
+
+            // Charge à nouveau les suggestions depuis le stockage local
+            loadSuggestions();
+        }
+
+        // Charger les suggestions existantes lors du chargement initial de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSuggestions();
+        });
+
+        // JavaScript pour gérer l'envoi du formulaire
+        document.getElementById('suggestion-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+            // Récupère les valeurs du formulaire
+            var pseudo = document.getElementById('pseudo').value;
+            var message = document.getElementById('message').value;
+
+            // Sauvegarde la suggestion dans le stockage local
+            saveSuggestion(pseudo, message);
+
+            // Rafraîchit l'affichage des suggestions pour inclure la nouvelle suggestion
+            refreshSuggestions();
+
+            // Efface les champs du formulaire après soumission
+            document.getElementById('pseudo').value = '';
+            document.getElementById('message').value = '';
+        });
+    </script>
+</body>
+</html>

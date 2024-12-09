@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langue Patatienne - La Patated</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles CSS personnalisés */
+        .command-highlight {
+            color: #cc900d;
+            font-weight: bold;
+        }
+        .command-title {
+            color: #cc900d;
+        }
+        .category-title {
+            text-decoration: underline;
+            text-decoration-color: black;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .encadre {
+            flex: 1 1 30%;
+            margin: 10px;
+        }
+        .encadre:first-of-type {
+            margin-left: 200px; /* Décalage vers la gauche */
+        }
+        .encadre:nth-of-type(2) {
+            margin-left: auto;
+            margin-right: 200px; /* Décalage vers la droite */
+        }
+        .encadre:nth-of-type(3) {
+            margin-left: 200px; /* Décalage vers la gauche */
+        }
+        .category-button {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #cc900d;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Langue Patatienne</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="bot.html">Bot</a></li>
+                <li><a href="langue-patatienne.html">Langue Patatienne</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section id="langue-patatienne">
+            <div class="encadre">
+                <h2>QU'EST-CE QUE LA <span class="highlight">LANGUE PATATIENNE ?</span></h2>
+                <p>La langue patatienne est une langue fictive créée pour le serveur Discord La Patated. Elle a ses propres règles grammaticales, vocabulaire et expressions uniques. Cette langue est utilisée par les membres du serveur pour communiquer de manière amusante et originale.</p>
+            </div>
+            <div class="encadre">
+                <h2 class="category-title">Catégories de la Langue</h2>
+                <p>Explorez les différentes catégories de la langue patatienne :</p>
+                <ul>
+                    <li>
+                        <span class="command-highlight">Grammaire</span>
+                        <a href="grammaire.html" class="category-button">Voir</a>
+                    </li>
+                    <li>
+                        <span class="command-highlight">Vocabulaire</span>
+                        <a href="vocabulaire.html" class="category-button">Voir</a>
+                    </li>
+                    <li>
+                        <span class="command-highlight">Expressions</span>
+                        <a href="expressions.html" class="category-button">Voir</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 La Patated. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
