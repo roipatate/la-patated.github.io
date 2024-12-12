@@ -199,3 +199,10 @@ footer nav ul li a:hover {
   max-width: 50%;
   height: auto;
 }
+img {
+  display: block;
+  margin: 0 auto; /* Centre l'image horizontalement */
+  max-width: 50%; /* Ajuste la largeur de l'image (50% de la largeur du conteneur) */
+  height: auto; /* Conserve les proportions de l'image */
+}
+
