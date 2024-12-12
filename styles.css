@@ -193,3 +193,9 @@ footer nav ul li a:hover {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
+.image-centree {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+}
