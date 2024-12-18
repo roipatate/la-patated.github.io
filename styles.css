@@ -1,20 +1,17 @@
 /* Réinitialisation des styles de base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Inclut les bordures et padding dans la largeur totale */
-}
-
-html, body {
+body {
     font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 header {
@@ -30,6 +27,7 @@ header h1 {
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 0;
 }
 
 nav ul {
@@ -50,6 +48,7 @@ nav ul li a {
     text-decoration: none;
     font-family: 'Times New Roman', serif;
     font-weight: bold;
+    padding-bottom: 5px;
     transition: color 0.3s;
 }
 
@@ -90,11 +89,12 @@ section {
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.032);
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s, transform 1.5s;
-    width: 100%;
-    max-width: 600px;
 }
 
 .encadre.visible {
@@ -104,6 +104,7 @@ section {
 
 .encadre h2 {
     position: relative;
+    z-index: 1;
     margin-bottom: 1rem;
 }
 
@@ -127,6 +128,7 @@ section {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .button {
@@ -136,6 +138,7 @@ section {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s;
+    display: inline-block;
     text-align: center;
     font-family: 'Times New Roman', serif;
     font-weight: bold;
@@ -145,23 +148,22 @@ section {
     background-color: #777;
 }
 
-/* Footer */
 footer {
-    background-color: #000;
+    background-color: #000; /* Pour visualiser le footer */
     color: #fff;
     text-align: center;
     padding: 1rem;
     border-top: 2px solid #555;
-    width: 100%; /* Assure une largeur totale */
-    margin-top: auto; /* Positionne le footer en bas */
+    margin: 0; /* Supprime tout espace extérieur */
+    width: 100vw; /* Assure une largeur égale à celle de la fenêtre */
 }
 
 footer nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 footer nav ul li {
@@ -180,24 +182,30 @@ footer nav ul li a:hover {
     background-color: #555;
 }
 
-/* Zone de texte supplémentaire */
+/* Zone de texte en bas de la page */
 .zone-de-texte {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1rem;
     border-top: 2px solid #555;
+    position: relative;
+    width: 100%;
 }
 
 .zone-de-texte p {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
-
-/* Images */
-.image-centree, img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
+.image-centree {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+}
+img {
+  display: block;
+  margin: 0 auto; /* Centre l'image horizontalement */
+  max-width: 100%; /* Ajuste la largeur de l'image (50% de la largeur du conteneur) */
+  height: auto; /* Conserve les proportions de l'image */
 }
