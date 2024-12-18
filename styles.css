@@ -1,4 +1,3 @@
-/* Réinitialisation des styles de base */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
@@ -6,8 +5,10 @@ body {
     background-color: #f5f5f5;
     color: #333;
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     min-height: 100vh;
+    overflow-y: auto; /* Défilement vertical si nécessaire */
 }
 
 html, body {
@@ -69,15 +70,14 @@ nav ul li a.active {
 }
 
 main {
-    flex: 1;
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 800px; /* Limite la largeur */
+    padding: 2rem; /* Ajoute de l'espace autour */
+    box-sizing: border-box; /* Inclut le padding dans les dimensions */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 2rem;
-    min-height: 100vh; /* Assure que le conteneur occupe toute la hauteur de l'écran */
-    box-sizing: border-box; /* Inclut le padding dans les dimensions */
-    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+    flex-direction: column; /* Aligne les blocs verticalement */
 }
 
 section {
@@ -93,7 +93,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.032);
     margin-bottom: 2rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 600px; /* Limite la largeur maximale */
     position: relative;
     opacity: 0;
     transform: translateY(20px);
