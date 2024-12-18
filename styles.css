@@ -149,13 +149,13 @@ section {
 }
 
 footer {
-    background-color: #000; /* Changer le fond en noir */
+    background-color: #000; /* Pour visualiser le footer */
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: relative;
-    width: 100%;
     border-top: 2px solid #555;
+    margin: 0; /* Supprime tout espace extérieur */
+    width: 100vw; /* Assure une largeur égale à celle de la fenêtre */
 }
 
 footer nav ul {
