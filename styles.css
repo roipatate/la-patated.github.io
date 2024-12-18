@@ -88,16 +88,14 @@ section {
     padding: 2rem;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.032);
-    margin: 2rem auto; /* Ajouté pour centrer horizontalement */
+    margin: 2rem auto; /* Centre le bloc horizontalement */
     width: 100%;
     max-width: 600px;
     position: relative;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s, transform 1.5s;
-    display: flex; /* Ajouté pour centrer le contenu verticalement */
-    justify-content: center; /* Centre le contenu horizontalement */
-    align-items: center; /* Centre le contenu verticalement */
+    /* Suppression du display flex ici */
 }
 
 .encadre.visible {
@@ -109,14 +107,16 @@ section {
     position: relative;
     z-index: 1;
     margin-bottom: 1rem;
+    text-align: center; /* Centrer le titre dans le bloc */
 }
 
 .encadre h2::before {
     content: '';
     position: absolute;
     bottom: -3px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Centre horizontalement */
+    width: 50%;
     height: 2px;
     background-color: #000;
 }
@@ -125,6 +125,7 @@ section {
     margin-top: 1rem;
     line-height: 1.6;
     font-size: 1.1rem;
+    text-align: justify; /* Assure un texte propre et lisible */
 }
 
 .button-container {
