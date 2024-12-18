@@ -91,11 +91,9 @@ section {
     margin-bottom: 2rem;
     width: 100%;
     max-width: 600px;
-    position: absolute; /* pour le positionnement centré */
-    top: 50%; /* centré verticalement */
-    left: 50%; /* centré horizontalement */
-    transform: translate(-50%, -50%); /* ajustement pour le centrer réellement */
+    position: relative;
     opacity: 0;
+    transform: translateY(20px);
     transition: opacity 1.5s, transform 1.5s;
 }
 
