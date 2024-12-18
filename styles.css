@@ -70,11 +70,14 @@ nav ul li a.active {
 
 main {
     flex: 1;
-    padding: 2rem;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 100vh; /* Assure que le conteneur occupe toute la hauteur de l'écran */
+    box-sizing: border-box; /* Inclut le padding dans les dimensions */
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
 }
 
 section {
