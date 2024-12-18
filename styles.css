@@ -158,6 +158,21 @@ section {
     }
 }
 
+.image-hors-block {
+    display: block; /* Transforme l'image en élément de bloc */
+    margin: 2rem auto; /* Centre l'image horizontalement avec un espace au-dessus et en dessous */
+    max-width: 80%; /* Limite la largeur maximale à 80% de l'écran */
+    height: auto; /* Conserve les proportions de l'image */
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 600px) {
+    .image-hors-block {
+        max-width: 90%; /* Réduit encore la taille pour les petits écrans */
+    }
+}
+
+
 
 .button-container {
     display: flex;
