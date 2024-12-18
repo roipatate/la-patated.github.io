@@ -143,6 +143,21 @@ section {
     }
 }
 
+.image-centree {
+    display: block; /* Transforme l'image en élément de bloc */
+    margin: 0 auto; /* Centre l'image horizontalement */
+    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    text-align: center; /* Assure une centralisation dans les textes parents */
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 600px) {
+    .image-centree {
+        max-width: 90%; /* Limite la largeur à 90% pour éviter les débordements */
+    }
+}
+
 
 .button-container {
     display: flex;
