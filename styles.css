@@ -95,7 +95,10 @@ section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s, transform 1.5s;
-    /* Suppression du display flex ici */
+
+    /* Adaptation pour petits écrans */
+    max-height: 80vh; /* Limite la hauteur à 80% de la fenêtre visible */
+    overflow-y: auto; /* Ajoute un défilement vertical si le contenu dépasse */
 }
 
 .encadre.visible {
@@ -127,6 +130,19 @@ section {
     font-size: 1.1rem;
     text-align: justify; /* Assure un texte propre et lisible */
 }
+
+/* Media query pour les très petits écrans */
+@media (max-width: 600px) {
+    .encadre {
+        max-width: 90%; /* Réduit la largeur à 90% de l'écran */
+        padding: 1.5rem; /* Réduit le padding pour économiser de l'espace */
+    }
+
+    .encadre h2::before {
+        width: 80%; /* Ajuste la largeur de la ligne sous le titre */
+    }
+}
+
 
 .button-container {
     display: flex;
