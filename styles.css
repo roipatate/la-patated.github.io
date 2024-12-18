@@ -10,6 +10,10 @@ body {
     min-height: 100vh;
 }
 
+html, body {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -205,4 +209,3 @@ img {
   max-width: 100%; /* Ajuste la largeur de l'image (50% de la largeur du conteneur) */
   height: auto; /* Conserve les proportions de l'image */
 }
-
