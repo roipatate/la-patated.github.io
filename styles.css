@@ -172,52 +172,6 @@ section {
     }
 }
 
-.chapitre-block {
-    background: linear-gradient(to right, #f9f9f9, #e6e6e6);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.chapitre-block h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.chapitre-block h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #666;
-}
-
-.chapitre-block p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.navigation-buttons {
-    margin-top: 1rem;
-}
-
-.navigation-buttons button {
-    background-color: #cc900d;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.navigation-buttons button:hover {
-    background-color: #555;
-}
-
 .button-container {
     display: flex;
     justify-content: center;
