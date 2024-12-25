@@ -25,4 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.target.classList.remove('visible');
             }
         });
+        function ouvrirLightbox(image) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+
+    lightboxImage.src = image.src; // Utilise la même source que l'image cliquée
+    lightbox.style.display = "flex"; // Affiche la lightbox
+}
+
+function fermerLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none"; // Masque la lightbox
+}
+
     }, observerOptions);
