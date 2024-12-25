@@ -88,17 +88,16 @@ section {
     padding: 2rem;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.032);
-    margin: 2rem auto; /* Centre le bloc horizontalement */
+    margin: 2rem auto; /* Ajouté pour centrer horizontalement */
     width: 100%;
     max-width: 600px;
     position: relative;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s, transform 1.5s;
-
-    /* Adaptation pour petits écrans */
-    max-height: 80vh; /* Limite la hauteur à 80% de la fenêtre visible */
-    overflow-y: auto; /* Ajoute un défilement vertical si le contenu dépasse */
+    display: flex; /* Ajouté pour centrer le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
 }
 
 .encadre.visible {
@@ -110,16 +109,14 @@ section {
     position: relative;
     z-index: 1;
     margin-bottom: 1rem;
-    text-align: center; /* Centrer le titre dans le bloc */
 }
 
 .encadre h2::before {
     content: '';
     position: absolute;
     bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%); /* Centre horizontalement */
-    width: 50%;
+    left: 0;
+    width: 100%;
     height: 2px;
     background-color: #000;
 }
@@ -128,48 +125,6 @@ section {
     margin-top: 1rem;
     line-height: 1.6;
     font-size: 1.1rem;
-    text-align: justify; /* Assure un texte propre et lisible */
-}
-
-/* Media query pour les très petits écrans */
-@media (max-width: 600px) {
-    .encadre {
-        max-width: 90%; /* Réduit la largeur à 90% de l'écran */
-        padding: 1.5rem; /* Réduit le padding pour économiser de l'espace */
-    }
-
-    .encadre h2::before {
-        width: 80%; /* Ajuste la largeur de la ligne sous le titre */
-    }
-}
-
-.image-centree {
-    display: block; /* Transforme l'image en élément de bloc */
-    margin: 0 auto; /* Centre l'image horizontalement */
-    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
-    height: auto; /* Conserve les proportions de l'image */
-    text-align: center; /* Assure une centralisation dans les textes parents */
-}
-
-/* Pour les très petits écrans */
-@media (max-width: 600px) {
-    .image-centree {
-        max-width: 90%; /* Limite la largeur à 90% pour éviter les débordements */
-    }
-}
-
-.image-hors-block {
-    display: block; /* Transforme l'image en élément de bloc */
-    margin: 2rem auto; /* Centre l'image horizontalement avec un espace au-dessus et en dessous */
-    max-width: 80%; /* Limite la largeur maximale à 80% de l'écran */
-    height: auto; /* Conserve les proportions de l'image */
-}
-
-/* Pour les très petits écrans */
-@media (max-width: 600px) {
-    .image-hors-block {
-        max-width: 90%; /* Réduit encore la taille pour les petits écrans */
-    }
 }
 
 .button-container {
