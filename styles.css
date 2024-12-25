@@ -221,4 +221,27 @@ footer nav ul li a:hover {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
+
+/* Styles des boutons */
+button {
+    background-color: #cc900d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px; /* Pour espacer les boutons */
+}
+
+button:hover {
+    background-color: #b07d0a;
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
 }
