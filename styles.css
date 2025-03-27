@@ -1,51 +1,88 @@
-/* Ajout de transitions pour les éléments de texte */
-h1, h2, p {
-    transition: color 0.3s, transform 0.3s;
+/* Réinitialisation des styles de base */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Effet de survol sur les titres h1 et h2 */
-h1:hover, h2:hover {
-    transform: scale(1.05);
-    color: #cc900d;
+html, body {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
-/* Ajout d'un léger ombrage pour les paragraphes */
-p {
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #555;
 }
 
-/* Styles supplémentaires pour le footer */
-footer {
-    background-color: #222; /* Pour donner un effet plus profond */
-    padding: 2rem;
-    border-top: 1px solid #444;
+header h1 {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
 }
 
-footer nav ul li a {
-    padding: 8px 12px; /* Augmente le padding pour les liens */
-    transition: background-color 0.3s ease, color 0.3s ease;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
-footer nav ul li a:hover {
-    background-color: #444;
-    color: #cc900d;
+nav ul li {
+    margin-right: 1rem;
+    position: relative;
 }
 
-/* Apparence des boutons avec ombre et animation */
-.button {
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+nav ul li a.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
     background-color: #cc900d;
-    padding: 12px 24px;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-.button:hover {
-    background-color: #e08e18;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+nav ul li a:hover,
+nav ul li a.active {
+    color: #cc900d;
 }
 
-/* Animation sur les éléments visibles */
+main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
 .encadre {
     background: linear-gradient(to right, #f9f9f9, #e6e6e6);
     padding: 2rem;
@@ -60,7 +97,6 @@ footer nav ul li a:hover {
     transition: opacity 1.5s, transform 1.5s;
 }
 
-/* Animation pour l'apparition de sections */
 .encadre.visible {
     opacity: 1;
     transform: translateY(0);
@@ -82,33 +118,89 @@ footer nav ul li a:hover {
     background-color: #000;
 }
 
-/* Animations des images */
+.encadre p {
+    margin-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+
+/* Media query pour les très petits écrans */
+@media (max-width: 600px) {
+    .encadre {
+        max-width: 90%; /* Réduit la largeur à 90% de l'écran */
+        padding: 1.5rem; /* Réduit le padding pour économiser de l'espace */
+    }
+
+    .encadre h2::before {
+        width: 80%; /* Ajuste la largeur de la ligne sous le titre */
+    }
+}
+
 .image-centree {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
+    display: block; /* Transforme l'image en élément de bloc */
+    margin: 0 auto; /* Centre l'image horizontalement */
+    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    text-align: center; /* Assure une centralisation dans les textes parents */
 }
 
-.image-centree:hover {
-    transform: scale(1.05); /* Ajoute un léger zoom au survol */
+/* Pour les très petits écrans */
+@media (max-width: 600px) {
+    .image-centree {
+        max-width: 90%; /* Limite la largeur à 90% pour éviter les débordements */
+    }
 }
 
-/* Optimisation des images dans le texte */
 .image-hors-block {
-    display: block;
-    margin: 2rem auto;
-    max-width: 80%;
-    height: auto;
-    transition: transform 0.5s ease;
+    display: block; /* Transforme l'image en élément de bloc */
+    margin: 2rem auto; /* Centre l'image horizontalement avec un espace au-dessus et en dessous */
+    max-width: 80%; /* Limite la largeur maximale à 80% de l'écran */
+    height: auto; /* Conserve les proportions de l'image */
 }
 
-.image-hors-block:hover {
-    transform: scale(1.05); /* Légère animation au survol */
+/* Pour les très petits écrans */
+@media (max-width: 600px) {
+    .image-hors-block {
+        max-width: 90%; /* Réduit encore la taille pour les petits écrans */
+    }
 }
 
-/* Style des zones de texte en bas de la page */
+footer {
+    background-color: #000; /* Pour visualiser le footer */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid #555;
+    margin: 0; /* Supprime tout espace extérieur */
+    width: 100vw; /* Assure une largeur égale à celle de la fenêtre */
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 5px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    padding: 5px 10px;
+}
+
+footer nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Zone de texte en bas de la page */
 .zone-de-texte {
     background-color: #333;
     color: #fff;
@@ -117,17 +209,14 @@ footer nav ul li a:hover {
     border-top: 2px solid #555;
     position: relative;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .zone-de-texte p {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
 }
 
-/* Amélioration de l'apparence du bouton-container */
+/* Styles des boutons */
 .button-container {
     display: flex;
     justify-content: center;
@@ -150,5 +239,4 @@ footer nav ul li a:hover {
 
 .button:hover {
     background-color: #777;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
