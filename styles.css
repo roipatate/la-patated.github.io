@@ -10,10 +10,6 @@ body {
     min-height: 100vh;
 }
 
-html, body {
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-}
-
 header {
     background-color: #333;
     color: #fff;
@@ -196,76 +192,4 @@ footer nav ul li a:hover {
 .zone-de-texte p {
     margin: 0;
     font-family: 'Arial', sans-serif;
-}
-
-/* Styles des images */
-.image-centree {
-    display: block; /* Transforme l'image en élément de bloc */
-    margin: 0 auto; /* Centre l'image horizontalement */
-    max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
-    height: auto; /* Conserve les proportions de l'image */
-    text-align: center; /* Assure une centralisation dans les textes parents */
-}
-
-/* Pour les très petits écrans */
-@media (max-width: 600px) {
-    .image-centree {
-        max-width: 90%; /* Limite la largeur à 90% pour éviter les débordements */
-    }
-}
-
-.image-hors-block {
-    display: block; /* Transforme l'image en élément de bloc */
-    margin: 2rem auto; /* Centre l'image horizontalement avec un espace au-dessus et en dessous */
-    max-width: 80%; /* Limite la largeur maximale à 80% de l'écran */
-    height: auto; /* Conserve les proportions de l'image */
-}
-
-/* Pour les très petits écrans */
-@media (max-width: 600px) {
-    .image-hors-block {
-        max-width: 90%; /* Réduit encore la taille pour les petits écrans */
-    }
-}
-
-/* Styles pour la classe .encadre */
-.encadre {
-    background: linear-gradient(to right, #f9f9f9, #e6e6e6);
-    padding: 2rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.032);
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 600px;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1.5s, transform 1.5s;
-}
-
-.encadre.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.encadre h2 {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 1rem;
-}
-
-.encadre h2::before {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-}
-
-.encadre p {
-    margin-top: 1rem;
-    line-height: 1.6;
-    font-size: 1.1rem;
 }
