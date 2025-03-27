@@ -271,20 +271,22 @@ p {
 
 .buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
+    justify-content: space-between; /* Espacement entre les boutons */
+    width: 100%;
+    max-width: 400px; /* Limite la largeur */
+    margin-top: 20px;
+    
 .content {
-    position: relative;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    flex-direction: column; /* Aligne les éléments en colonne */
     width: 80%;
     max-width: 800px;
-    height: 70%;
-    overflow: hidden;
+    margin: 0 auto; /* Centre le bloc principal */
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    text-align: center; /* Centre le texte à l'intérieur */
 }
