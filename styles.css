@@ -1,3 +1,4 @@
+/* Initialisation des styles de base */
 body {
     font-family: 'Georgia', serif;
     margin: 0;
@@ -244,5 +245,4 @@ footer nav ul li a:hover {
 
 .button:hover {
     background-color: #777;
-    
 }
