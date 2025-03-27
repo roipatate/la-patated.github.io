@@ -242,45 +242,62 @@ footer nav ul li a:hover {
     background-color: #777;
 }
 
-.chapitre-block {
-        margin: 20px;
-        padding: 20px;
-        background-color: #f4f4f4;
-        border-radius: 8px;
-    }
+/* Bloc des chapitres */
+.chapitre {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
 
-    #titre {
-        font-size: 24px;
-        font-weight: bold;
-    }
+.chapitre:hover {
+    transform: translateY(-10px); /* Légère élévation au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
 
-    #sous-titre {
-        font-size: 20px;
-        font-style: italic;
-        margin-top: 10px;
-    }
+/* Titre des chapitres */
+.chapitre h3 {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #cc900d; /* Ligne sous le titre */
+    padding-bottom: 5px;
+}
 
-    #contenu {
-        font-size: 16px;
-        margin-top: 20px;
-        line-height: 1.6;
-    }
+/* Contenu des chapitres */
+.chapitre p {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
 
-    .navigation-buttons {
-        margin-top: 20px;
-    }
+/* Ajouter une icône avant le texte du chapitre */
+.chapitre::before {
+    content: '📚'; /* Icône de livre */
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #cc900d;
+}
 
-    .navigation-buttons button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 0 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+/* Animation pour l'apparition des chapitres */
+.chapitre {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
 
-    .navigation-buttons button:hover {
-        background-color: #45a049;
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
